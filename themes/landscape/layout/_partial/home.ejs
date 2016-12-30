@@ -1,0 +1,32 @@
+<% page.posts.each(function(post){ %>
+  <div class="card home-page" href="<%- url_for(post.path) %>">
+    <!-- <h2 class="card-header"><%= post.title %></h2> -->
+    <div class="card-block">
+      <h3 class="card-title"><%= post.title %></h3>
+      <p class="card-subtitle">
+        <span class="author">作者：<span>maywzp</span></span>•
+        <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, 'YYYY-MM-DD') %></time>
+      </p>
+    </div>
+    <div class="card-block">
+        <img src="<%= post.photos %>" alt="">
+    </div>
+    <% if(post.description) { %>
+    <div class="card-block">
+      <a class="card-text" href="<%- url_for(post.path) %>"><%= post.description %></a>
+    </div>
+    <% } %>
+    <div class="card-footer">
+      <a class="btn btn-primary" href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
+      <a data-url="<%- post.permalink %>" data-id="<%= post._id %>" class="article-share-link"><%= __('share') %></a>
+    </div>
+  </div>
+<% }) %>
+<% if (page.total > 1){ %>
+  <nav id="page-nav">
+    <%- paginator({
+      prev_text: "&laquo;",
+      next_text: "&raquo;"
+    }) %>
+  </nav>
+<% } %>
