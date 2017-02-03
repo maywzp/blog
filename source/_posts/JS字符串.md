@@ -1,7 +1,9 @@
 ---
 title: JS字符串
 date: 2016-12-29 16:44:28
-tags: ["js笔记"]
+tags: ['js笔记']
+description: Javascript String操作总结
+photos: http://oizt3fjv8.bkt.clouddn.com/js-string.png
 ---
 
 ## concat（合并字符串）

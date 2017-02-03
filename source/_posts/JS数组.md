@@ -2,6 +2,8 @@
 title: JS数组
 date: 2016-12-29 16:41:42
 tags: ['js笔记']
+description: Javascript Array对象操作总结
+photos: http://oizt3fjv8.bkt.clouddn.com/javascript.JPG
 ---
 
 ## concat（合并数值）

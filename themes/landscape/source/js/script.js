@@ -152,4 +152,12 @@
    }, 750);
    return false;
   });
+
+  $(window).scroll(function () {
+   if ($(this).scrollTop() > 50) {
+     $('#toc').css('top', 0);
+   } else {
+     $('#toc').css('top', "300px");
+   }
+  });
 })(jQuery);

@@ -1,19 +1,21 @@
 <% page.posts.each(function(post){ %>
-  <div class="card home-page" href="<%- url_for(post.path) %>">
+  <div class="card home-card" href="<%- url_for(post.path) %>">
     <!-- <h2 class="card-header"><%= post.title %></h2> -->
     <div class="card-block">
-      <h3 class="card-title"><%= post.title %></h3>
+      <a href="<%- url_for(post.path) %>" class="card-title"><%= post.title %></a>
       <p class="card-subtitle">
         <span class="author">作者：<span>maywzp</span></span>•
         <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, 'YYYY-MM-DD') %></time>
       </p>
     </div>
     <div class="card-block">
-        <img src="<%= post.photos %>" alt="">
+        <a href="<%- url_for(post.path) %>" class="card-banner" style="background-image:url(<%= post.photos %>)">
+          <!-- <img src="<%= post.photos %>" alt=""> -->
+        </a>
     </div>
     <% if(post.description) { %>
     <div class="card-block">
-      <a class="card-text" href="<%- url_for(post.path) %>"><%= post.description %></a>
+      <p class="card-text" href="<%- url_for(post.path) %>"><%= post.description %></p>
     </div>
     <% } %>
     <div class="card-footer">

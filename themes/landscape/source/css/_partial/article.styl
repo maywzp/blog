@@ -360,12 +360,31 @@ $article-gallery-ctrl
   &:before
     content: "\f054"
     right: 15px*/
-.toc
+#toc
+  display: none
   position: fixed
+  // top: 300px
   top: 300px
   right: 0
-  overflow-x: hidden
-  width:400px
+  // overflow-x: hidden
+  width:300px
   text-align: left
-  background: #ddd
-  padding: 10px 5px
+  background: rgba(0,0,0,0.2)
+  padding: 10px 20px
+  &:before
+    position: absolute
+    top: 50%
+    left: -10px
+    content: ''
+    border-color: transparent
+    border-right-color: rgba(0,0,0,0.2)
+    border-style: solid
+    border-width: 10px 10px 10px 0
+ .toc-title
+   display: block
+   text-align: center
+   font-size: 16px
+   margin: 20px 0
+ .toc-item a
+  color: #444
+  font-size: 14px
