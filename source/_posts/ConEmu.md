@@ -1,7 +1,7 @@
 ---
 layout: git
 title: Git Bash Here in ConEmu
-date: 2016-12-29 10:18:09
+date: 2016-10-13 10:18:09
 tags: ["配置"]
 description: ConEmu是一个带标签的Windows终端，提供多标签支持和丰富的自定义选项，是Windows下不可多得的Console,可集成git环境。
 photos: http://oizt3fjv8.bkt.clouddn.com/conemu.png

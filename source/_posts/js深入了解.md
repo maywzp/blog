@@ -1,7 +1,9 @@
 ---
-title: 'js深入学习'
+title: 'JS深入学习'
 date: 2017-01-18 09:41:29
-tags: ["js笔记"]
+tags: ["javascript"]
+description: JavaScript博大精深此文用于积累自己平时对JS基础知识的学习
+photos: http://oizt3fjv8.bkt.clouddn.com/javascriptsrxx.png
 ---
 
 ## 对象
@@ -168,7 +170,7 @@ function XO(str) {
   let o = str.match(/o/gi);
   return (x && x.length) === (o && o.length);
   //&& 返回true,则返回后者。返回false,则返回前者。
-  //这里如果x为空，则返回false,返回x;如果x不为空，则返回true，返回                                                                                                                             x.length;
+  //这里如果x为空，则返回false,返回x;如果x不为空，则返回true，返回x.length;
 }
 ```
 
@@ -190,5 +192,5 @@ function printABC(){
 }
 
 调用：printABC();
-结果：Node -> 1 -> 2 ->3 :链式结构
+结果：Node -> 1 -> 2 ->3 
 ```

@@ -146,10 +146,20 @@
 
   // scroll body to 0px on click
   $('.topcontrol').click(function () {
+
    $('html, body').animate({
      scrollTop: 0,
      easing: 'swing'
-   }, 750);
+   }, 450);
+
+   $('html, body, .topcontrol').animate({
+     bottom: '80%',
+     easing: 'ease-out'
+   }, 400);
+
+   setTimeout(function() {
+     $('.topcontrol').css('bottom', '10%')
+   }, 1000)
    return false;
   });
 

@@ -43,8 +43,10 @@
 </section>
 <% } %>
 
-<div id="toc" class="toc-article">
+<div id="toc" class="widget-wrap">
   <!-- <div class="toc-control"></div> -->
-  <strong class="toc-title">文章目录</strong>
-  <%- toc(post.content) %>
+  <h3 class="widget-title">文章目录</h3>
+  <div class="widget">
+    <%- toc(post.content) %>
+  </div>
 </div>

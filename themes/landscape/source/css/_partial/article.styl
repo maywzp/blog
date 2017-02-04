@@ -181,6 +181,9 @@
 #article-nav
   clearfix()
   position: relative
+  .nav-home
+    position: absolute
+    color: #999
   @media mq-normal
     margin: block-margin 0
     &:before
@@ -363,23 +366,22 @@ $article-gallery-ctrl
 #toc
   display: none
   position: fixed
-  // top: 300px
-  top: 300px
-  right: 0
-  // overflow-x: hidden
-  width:300px
+  top: 800px
+  right: 7.9%
+  overflow-x: hidden
+  width:23.333333333333332%
   text-align: left
-  background: rgba(0,0,0,0.2)
+  // background: rgba(0,0,0,0.2)
   padding: 10px 20px
-  &:before
-    position: absolute
-    top: 50%
-    left: -10px
-    content: ''
-    border-color: transparent
-    border-right-color: rgba(0,0,0,0.2)
-    border-style: solid
-    border-width: 10px 10px 10px 0
+  // &:before
+  //   position: absolute
+  //   top: 50%
+  //   left: -10px
+  //   content: ''
+  //   border-color: transparent
+  //   border-right-color: rgba(0,0,0,0.2)
+  //   border-style: solid
+  //   border-width: 10px 10px 10px 0
  .toc-title
    display: block
    text-align: center

@@ -1,6 +1,6 @@
 ---
 title: Hexo配置
-date: 2016-12-29 11:16:16
+date: 2016-10-8 11:16:16
 tags: '配置'
 description: Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架，可以方便的生成静态网页托管在github和Heroku上，引用Hexo作者 @tommy351 的话：快速、简单且功能强大的 Node.js 博客框架。A fast, simple & powerful blog framework, powered by Node.js.
 photos: http://oizt3fjv8.bkt.clouddn.com/hexo.png

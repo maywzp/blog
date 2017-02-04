@@ -4,12 +4,16 @@
   <% } %>
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+      <span class="copyright"> &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %></span>
+
+      <ul class="link-box">
+        <li class="link"><a href="https://github.com/maywzp">Github</a></li>
+        <li class="link"><a href="http://weibo.com/3509294762/profile?rightmod=1&wvr=6&mod=personinfo">微博</a></li>
+      </ul>
+
       <!-- <%= __('powered_by') %> <a href="http://hexo.io/" target="_blank">Hexo</a> -->
     </div>
   </div>
 </footer>
 
-<div class="topcontrol">
-  Top
-</div>
+<div class="topcontrol"></div>

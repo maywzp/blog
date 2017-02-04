@@ -1,9 +1,9 @@
 ---
 title: JS常用代码片段
-date: 2016-12-29 16:44:28
-tags: ['JS实用']
-description: Javascript String操作总结
-photos:
+date: 2016-12-16 16:44:28
+tags: ['javascript']
+description: Javascript 片段积累
+photos: http://oizt3fjv8.bkt.clouddn.com/javascriptno2.jpg
 ---
 
 ## 保留两位小数
@@ -16,7 +16,7 @@ number.toFixed(2)
 arr.concat() //数组复制
 ```
 
-## 解决对象引用问题：
+## 解决对象引用问题
 ```javascript
 Object.assign({}, obj) //对象复制
 ```
@@ -80,13 +80,13 @@ var money = (money.toFixed(2) + '').replace(/\d{1,3}(?=(\d{3})+(\.\d*)?$)/g, '$&
 
 ## 前进
 ```javascript
-window.history.go(-1):
+window.history.go(-1)
 history.go(-1)
 ```
 
 ## 后退
 ```javascript
-window.history.back():
+window.history.back()
 history.back()
 ```
 

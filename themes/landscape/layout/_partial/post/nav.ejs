@@ -1,5 +1,6 @@
 <% if (post.prev || post.next){ %>
 <nav id="article-nav">
+  <a class="nav-home" href="/">首页</a>
   <% if (post.prev){ %>
     <a href="<%- url_for(post.prev.path) %>" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><%= __('newer') %></strong>

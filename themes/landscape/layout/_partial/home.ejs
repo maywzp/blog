@@ -1,4 +1,17 @@
 <% page.posts.each(function(post){ %>
+  <div class="media home-media">
+    <a href="<%- url_for(post.path) %>">
+      <img class="col-md-3 media-img" src="<%= post.photos %>" alt="<%= post.title %>">
+    </a>
+    <div class="media-body">
+      <a href="<%- url_for(post.path) %>" class="media-heading"><%= post.title %></a>
+      <p class="media-subtitle">
+        <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"><%= date(post.date, 'YYYY年MM月DD日') %></time> by <span>MayWzp</span>
+      </p>
+      <p class="media-desc"><%= post.description %></p>
+      <a href="<%- url_for(post.path) %>" class="btn btn-primary">更多</a>
+    </div>
+  </div>
   <div class="card home-card" href="<%- url_for(post.path) %>">
     <!-- <h2 class="card-header"><%= post.title %></h2> -->
     <div class="card-block">
