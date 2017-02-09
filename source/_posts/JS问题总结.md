@@ -1,6 +1,6 @@
 ---
 title: JS问题总结
-date: 2017-1-12 14:15:32
+date: 2017-1-06 14:15:32
 tags: ['javascript', '问题']
 description: 积累JavaScript平时犯的错误。
 photos: http://oizt3fjv8.bkt.clouddn.com/javascript_no4.jpg

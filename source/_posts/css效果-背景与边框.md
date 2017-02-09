@@ -26,7 +26,9 @@ background-clip: padding-box;
 ```
 
 # [多重边框](http://play.csssecrets.io/multiple-borders)
-知识点： `box-shadow实现多重阴影。` `outline实现两层边框` 实现： 方案一
+知识点： `box-shadow实现多重阴影。` `outline实现两层边框`
+实现：
+方案一
 
 ```
 background: yellowgreen;
@@ -56,7 +58,8 @@ calc()的运算:
   可以混合使用各种单位进行计算
 ```
 
-实现： 方案一
+实现：
+方案一
 
 ```
 background:url('xx') no-repeat bottom right #58a;
@@ -79,7 +82,8 @@ background-position: calc(100% - 20px) calc(100% - 10px);
 ```
 
 # [边框内圆角](http://play.csssecrets.io/inner-rounding)
-知识点： `box-shadow、outline多重边框` 实现：
+知识点： `box-shadow、outline多重边框`
+实现：
 
 ```
 outline: 6px solid #655;
@@ -113,7 +117,8 @@ background-size:30px 100%; //条纹宽度为15px
 ```
 
 ## [斜向条纹](http://play.csssecrets.io/diagonal-stripes)
-实现： 普通：
+实现：
+普通：
 
 ```
 background: linear-gradient(45deg, #fb3 25%, #58a 0, #58a 50%, #fb3 0, #fb3 75%, #58a 0);
@@ -136,8 +141,8 @@ body, .box::before {
     background: url("http://csssecrets.io/images/tiger.jpg") 0 / cover fixed;
 }
 .box{
-  position: relative;
-  background: hsla(0,0%,100%,.25) border-box;
+    position: relative;
+    background: hsla(0,0%,100%,.25) border-box;
     overflow: hidden;
     border-radius: .3em;
     box-shadow: 0 0 0 1px hsla(0,0%,100%,.3) inset,
@@ -160,10 +165,10 @@ body, .box::before {
 
 ```css
 .box{
-  position: relative;
+    position: relative;
     background: #58a;
     background: linear-gradient(-150deg, transparent 1.5em, #58a 0);
-  border-radius: .5em;
+    border-radius: .5em;
 }
 
 .box::before {
