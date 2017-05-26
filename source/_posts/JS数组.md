@@ -138,3 +138,9 @@ var sum = arr3.reduce(function(pre, cur, index){
 })
 //sum: 16
 ```
+
+## isArray（是否是数组）
+```javascript
+var arr = [1, 2]
+var flag = Array.isArray(arr) // true
+```
