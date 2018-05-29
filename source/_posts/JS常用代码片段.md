@@ -1,6 +1,7 @@
 ---
 title: JS常用代码片段
 date: 2016-12-16T16:44:28.000Z
+updated: 2016-12-16T16:44:28.000Z
 tags:
   - javascript
 description: Javascript 片段积累

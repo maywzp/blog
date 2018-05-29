@@ -1,6 +1,7 @@
 ---
 title: css问题记录
 date: 2017-1-24 09:19:45
+updated: 2017-1-24 09:19:45
 tags: ['css', '问题']
 description: 积累css平时犯的错误。
 photos: http://oizt3fjv8.bkt.clouddn.com/css.jpg

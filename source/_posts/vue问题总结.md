@@ -1,6 +1,7 @@
 ---
 title: vue问题总结
 date: 2017-1-18 10:12:14
+updated: 2017-1-18 10:12:14
 tags: ['vue', '问题']
 description: 积累vue平时犯的错误。
 photos: http://oizt3fjv8.bkt.clouddn.com/vue_no3.jpg

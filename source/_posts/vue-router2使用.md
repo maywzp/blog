@@ -1,6 +1,7 @@
 ---
 title: vue-router2使用
 date: 2016-11-19 10:47:15
+updated: 2016-11-19 10:47:15
 tags: ['vue']
 description: vue-router是vue.js官方的路由插件,它和vue.js是深度集成的,适合用于构建单页面应用。
 photos: http://oizt3fjv8.bkt.clouddn.com/vue-router.png

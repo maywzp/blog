@@ -1,6 +1,7 @@
 ---
 title: fetch技术使用
 date: 2017-1-5 14:47:15
+updated: 2017-1-5 14:47:15
 tags: ['javascript']
 description: 与XMLHttpRequest(XHR)类似，fetch()方法允许你发出AJAX请求。区别在于Fetch API使用Promise，因此是一种简洁明了的API，比XMLHttpRequest更加简单易用。
 photos: http://oizt3fjv8.bkt.clouddn.com/fetch.jpg

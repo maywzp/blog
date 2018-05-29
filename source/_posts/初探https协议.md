@@ -1,6 +1,7 @@
 ---
 title: 初探https协议
 date: 2017-02-16 17:13:33
+updated: 2017-02-16 17:13:33
 tags: ["http"]
 description: HTTPS（全称：Hyper Text Transfer Protocol over Secure Socket Layer），是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL。
 photos: http://oizt3fjv8.bkt.clouddn.com/https.jpg

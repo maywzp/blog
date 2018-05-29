@@ -1,6 +1,7 @@
 ---
 title: http入门解析
 date: 2017-02-15 13:47:28
+updated: 2017-02-15 13:47:28
 tags: ['http']
 description: 超文本传输协议（HTTP，HyperText Transfer Protocol)是互联网上应用最为广泛的一种网络协议。所有的WWW文件都必须遵守这个标准。设计HTTP最初的目的是为了提供一种发布和接收HTML页面的方法。1960年美国人Ted Nelson构思了一种通过计算机处理文本信息的方法，并称之为超文本（hypertext）,这成为了HTTP超文本传输协议标准架构的发展根基。
 photos: http://oizt3fjv8.bkt.clouddn.com/http.jpg

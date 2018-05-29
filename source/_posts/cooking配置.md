@@ -1,6 +1,7 @@
 ---
 title: cooking配置
 date: 2016-12-25
+updated: 2016-12-25
 tags: ['自动化工具', '配置']
 description: cooking 是一个基于 webpack 但是提供更简单的配置项，同时内置了许多常用配置的构建工具。
 photos: http://oizt3fjv8.bkt.clouddn.com/cooking_no1.jpg

@@ -1,6 +1,7 @@
 ---
 title: 'JS深入学习'
 date: 2017-01-18 09:41:29
+updated: 2017-01-18 09:41:29
 tags: ["javascript"]
 description: JavaScript博大精深此文用于积累自己平时对JS基础知识的学习
 photos: http://oizt3fjv8.bkt.clouddn.com/javascriptsrxx.png

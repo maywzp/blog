@@ -1,6 +1,7 @@
 ---
 title: nodeJS学习笔记
 date: 2016-12-18 16:44:28
+updated: 2016-12-18 16:44:28
 tags: ['node']
 description: Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。
 photos: http://oizt3fjv8.bkt.clouddn.com/nodeno1.jpg

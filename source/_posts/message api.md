@@ -1,6 +1,7 @@
 ---
 title: Message API
 date: 2017-05-26 10:47:28
+updated: 2017-05-26 10:47:28
 tags: ['javascript']
 description: Web Workers 为 Web 前端网页上的脚本提供了一种能在后台进程中运行的方法。一旦它被创建，Web Workers 就可以通过 postMessage 向任务池发送任务请求，执行完之后再通过 postMessage 返回消息给创建者指定的事件处理程序 ( 通过 onmessage 进行捕获 )。
 photos: http://oizt3fjv8.bkt.clouddn.com/message_api.jpg

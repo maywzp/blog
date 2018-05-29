@@ -1,6 +1,7 @@
 ---
 title: vue2学习笔记
 date: 2016-11-16 16:44:28
+updated: 2016-11-16 16:44:28
 tags: ['vue']
 description: Vue.js是当下很火的一个JavaScript MVVM库,它是以数据驱动和组件化的思想构建的。
 photos: http://oizt3fjv8.bkt.clouddn.com/vue_no1.jpg

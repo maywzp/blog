@@ -1,6 +1,7 @@
 ---
 title: css效果-文字
 date: 2016-10-19T11:05:15.000Z
+updated: 2016-10-19T11:05:15.000Z
 tags:
   - css
 description: css实现一些特殊的文字效果。

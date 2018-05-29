@@ -1,6 +1,7 @@
 ---
 title: vue2常用代码
 date: 2016-11-18T16:44:28.000Z
+updated: 2016-11-18T16:44:28.000Z
 tags:
   - vue
 description: 'Vue.js是当下很火的一个JavaScript MVVM库,它是以数据驱动和组件化的思想构建的。'

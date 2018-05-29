@@ -1,6 +1,7 @@
 ---
 title: webpack配置
 date: 2016-12-19
+updated: 2016-12-19
 tags: ['自动化工具', '配置']
 description: webpack当下最热门的前端资源模块化管理和打包工具。
 photos: http://oizt3fjv8.bkt.clouddn.com/webpack_no1.jpg

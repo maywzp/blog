@@ -1,6 +1,7 @@
 ---
 title: JavaScript DOM对象
 date: 2017-1-12T11:05:15.000Z
+updated: 2017-1-12T11:05:15.000Z
 tags:
   - javascript
 description: DOM—Document Object Model,它是W3C国际组织的一套Web标准。它定义了访问HTML文档对象的一套属性、方法和事件。

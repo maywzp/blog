@@ -1,6 +1,7 @@
 ---
 title: wireshark抓包工具的使用
 date: 2017-02-15 15:20:18
+updated: 2017-02-15 15:20:18
 tags: ['http']
 description: wireshark是非常流行的网络封包分析软件，功能十分强大。可以截取各种网络封包，显示网络封包的详细信息。
 photos: http://oizt3fjv8.bkt.clouddn.com/wireshark.jpg

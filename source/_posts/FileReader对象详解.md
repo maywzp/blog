@@ -1,6 +1,7 @@
 ---
 title: FileReader对象详解
 date: 2017-2-5 13:47:15
+updated: 2017-2-5 13:47:15
 tags: ['javascript']
 description: 用来把文件读入内存，并且读取文件中的数据。FileReader接口提供了一个异步API，使用该API可以在浏览器主线程中异步访问文件系统，读取文件中的数据。到目前文职，只有FF3.6+和Chrome6.0+实现了FileReader接口。
 photos: http://oizt3fjv8.bkt.clouddn.com/filereader_no1.png

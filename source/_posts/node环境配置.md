@@ -1,6 +1,7 @@
 ---
 title: node环境配置
 date: 2016-12-02
+updated: 2016-12-02
 tags: ['node', '配置']
 description: windows和CentOS node环境配置
 photos: http://oizt3fjv8.bkt.clouddn.com/nodeno2.jpg

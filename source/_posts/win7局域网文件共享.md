@@ -1,6 +1,7 @@
 ---
 title: win7局域网文件共享
 date: 2017-02-13 11:21:28
+updated: 2017-02-13 11:21:28
 tags: ['windows']
 description: 电脑在局域网内共享文件，不需要借助第三方软件实现文件的传输。
 photos: http://oizt3fjv8.bkt.clouddn.com/win7juyuwang.jpg
