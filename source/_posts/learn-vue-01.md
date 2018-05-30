@@ -1,7 +1,7 @@
 ---
 title: learn-vue-01
 date: 2018-05-30 16:35:51
-update: 2018-05-30 16:35:51
+update: 2018-05-30 23:05:51
 tags: vue
 description: 深入学习 Vue.js 第一步，学习 Object.defineProperty。Vue.js 的响应原理依赖于 Object.defineProperty，所以 Vue 不支持 IE8 及更低版本浏览器。Vue 通过设置对象的 setter/getter 方法，来监听数据的变化，通过 getter 进行依赖收集，而每个 setter 方法就是一个观察者，在数据变更时通知订阅者更新视图。
 ---
@@ -10,7 +10,7 @@ description: 深入学习 Vue.js 第一步，学习 Object.defineProperty。Vue.
 
 首先，我们应该了解一下 `JS` 中的一个 `API`：
 
-[Object.defineProperty(object, propertyname, descriptor) ](https://msdn.microsoft.com/zh-cn/library/dd548687(v=vs.94).aspx)
+[Object.defineProperty(object, propertyname, descriptor) ](https://msdn.microsoft.com/zh-cn/library/dd548687%28v=vs.94%29.aspx)
 
 该方法的作用：**将属性添加到对象，或者修改现有属性的特性**
 
