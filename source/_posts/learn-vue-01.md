@@ -49,17 +49,17 @@ obj.name = 'ross'
 // ross
 ```
 
-### 封装 defineProperty 函数
+### 封装 defineReactive 函数
 
 对 `Object.defineProperty`进行封装，方便调用：
 
 ```javascript
-// defineProperty 函数封装
+// defineReactive 函数封装
 const callback = {
   target: null
 }
 
-const defineProperty = function(object, key, value, cb) {
+const defineReactive = function(object, key, value, cb) {
   let array = []
   Object.defineProperty(object, key, {
     configurable: true,
@@ -82,13 +82,13 @@ const defineProperty = function(object, key, value, cb) {
 }
 ```
 
-`defineProperty`函数简陋的实现了Vue里的响应式原理，即在`get`方法中收集依赖，在`set`方法中触发依赖，更新视图。
+`defineReactive`函数简陋的实现了Vue里的响应式原理，即在`get`方法中收集依赖，在`set`方法中触发依赖，更新视图。
 
-`defineProperty`函数的调用：
+`defineReactive`函数的调用：
 
 ```javascript
 const obj = {}
-defineProperty(obj, 'name', 'jack')
+defineReactive(obj, 'name', 'jack')
 
 callback.target = (newValue, oldValue) => console.log('第一个依赖函数，新值为：' + newValue)
 obj.name
