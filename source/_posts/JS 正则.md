@@ -3,6 +3,7 @@ title: JS 正则
 date: 2018-10-23 12:13:22
 updated: 2018-10-23 12:13:22
 tags: 'javascript操作手册'
+description: Javascript 正则操作总结
 ---
 
 以下方法使用下面数据
