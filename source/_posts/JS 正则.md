@@ -1,7 +1,7 @@
 ---
 title: JS 正则
 date: 2018-10-23 12:13:22
-updated: 2018-10-23 12:13:22
+updated: 2018-10-25 18:23:02
 tags: 'javascript操作手册'
 description: Javascript 正则操作总结
 ---
@@ -69,7 +69,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 
 #### 特殊符号
 
-##### \
+##### `\`
 
 非特殊字符换化为特殊字符；特殊字符转化为字面量
 
@@ -78,7 +78,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 * 表示 0 个或多个，\* 就匹配 * 字符
 ```
 
-##### ^
+##### `^`
 
 配置输入的开始
 
@@ -86,7 +86,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 /^A/ 并不会匹配 "an A" 中的 A，但会匹配 "An E" 中的 A
 ```
 
-##### $
+##### `$`
 
 配置输入的结束
 
@@ -94,7 +94,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 /t$/ 不会匹配 "eater" 中的 t，但会匹配 "eat" 中的 t
 ```
 
-##### *
+##### `*`
 
 匹配前一个表达式 0 次或多次，等价于 {0,}
 
@@ -102,7 +102,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 /bo*/ 会匹配 "booed" 中的 'boo' 和 'bird' 中的 'b'
 ```
 
-##### +
+##### `+`
 
 匹配前一个表达式 1 次或者多次，等价于{1,}
 
@@ -110,7 +110,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 /a+/ 会匹配 "candy" 中的 'a'，"caaaat" 中的 'aaaa'
 ```
 
-##### ?
+##### `?`
 
 匹配前一个表达式 0 次或者 1 次，等价于 {0, 1}
 
@@ -118,7 +118,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 /e?el?/ 会匹配 "angle" 中 'le', "sole" 中的 'e'
 ```
 
-##### .
+##### `.`
 
 匹配除换行符之外的任何单个字符
 
@@ -135,11 +135,11 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 匹配一个词的边界（一个词的边界就是一个词不被另外一个词跟随的位置或者不是另一个词汇字符前边的位置）
 
 ```javascript
-/\bm/ 匹配 "moon" 中得 'm'
+/\bm/ 匹配 "moon" 中的 'm'
 
-/oo\b/ 并不匹配 "moon" 中得 'oo'，因为 'oo' 被一个词汇字符 'n' 紧跟着。
+/oo\b/ 并不匹配 "moon" 中的 'oo'，因为 'oo' 被一个词汇字符 'n' 紧跟着。
 
-/oon\b/ 匹配 "moon" 中得 'oon'，因为 'oon' 是这个字符串的结束部分。这样他没有被一个词汇字符紧跟着。
+/oon\b/ 匹配 "moon" 中的 'oon'，因为 'oon' 是这个字符串的结束部分。这样他没有被一个词汇字符紧跟着。
 ```
 
 ##### \B
@@ -147,7 +147,7 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 匹配一个非单词边界 (一个字符串的开始和结尾都被认为是非单词)
 
 ```javascript
-/\B../ 匹配 "noonday" 中得 'oo', 而 /y\B./ 匹配 "possibly yesterday" 中得 'ye'
+/\B../ 匹配 "noonday" 中的 'oo', 而 /y\B./ 匹配 "possibly yesterday" 中的 'ye'
 ```
 
 ##### \d
@@ -207,7 +207,7 @@ n是一个正整数，匹配了前面一个字符刚好发生了n次
 n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n 或者 m 的值是0， 这个值被忽略
 
 ```javascript
-/a{1,3}/ 并不匹配“cndy”中的任意字符，匹配“candy”中得a，匹配“caandy”中的前两个a，也匹配“caaaaaaandy”中的前三个a。注意，当匹配”caaaaaaandy“时，匹配的值是“aaa”，即使原始的字符串中有更多的a
+/a{1,3}/ 并不匹配“cndy”中的任意字符，匹配“candy”中的a，匹配“caandy”中的前两个a，也匹配“caaaaaaandy”中的前三个a。注意，当匹配”caaaaaaandy“时，匹配的值是“aaa”，即使原始的字符串中有更多的a
 ```
 
 ##### (x)
@@ -256,7 +256,7 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 一个字符集合。匹配方括号的中任意字符。可以使用破折号（-）来指定一个字符范围。对于点（.）和星号（*）这样的特殊符号在一个字符集中没有特殊的意义
 
 ```javascript
-[abcd] 和[a-d]是一样的。他们都匹配"brisket"中得‘b’,也都匹配“city”中的‘c’。/[a-z.]+/ 和/[\w.]+/都匹配“test.i.ng”中得所有字符
+[abcd] 和[a-d]是一样的。他们都匹配"brisket"中的‘b’,也都匹配“city”中的‘c’。/[a-z.]+/ 和/[\w.]+/都匹配“test.i.ng”中的所有字符
 ```
 
 ##### [^x,y,z]
@@ -264,7 +264,7 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 一个反向字符集
 
 ```javascript
-[^abc] 和 [^a-c] 是一样的。他们匹配"brisket"中得‘r’，也匹配“chop”中的‘h’
+[^abc] 和 [^a-c] 是一样的。他们匹配"brisket"中的‘r’，也匹配“chop”中的‘h’
 ```
 
 

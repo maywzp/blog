@@ -61,6 +61,7 @@
         {% endif %}
 
         <div class="post-meta">
+          {#
           <span class="post-time">
             {% if theme.post_meta.created_at %}
               <span class="post-meta-item-icon">
@@ -89,6 +90,13 @@
                 {{ date(post.updated, config.date_format) }}
               </time>
             {% endif %}
+          </span>
+          #}
+          <span class="post-time">
+            {# <span class="post-meta-item-text">updated </span> #}
+            <time title="{{ __('post.modified') }}" itemprop="dateCreated datePublished" datetime="{{ moment(post.updated).format() }}">
+              {{ date(post.updated, config.date_format) }}
+            </time>
           </span>
 
           {% if post.categories and post.categories.length and theme.post_meta.categories %}
@@ -268,6 +276,7 @@
     {#################}
     {### POST BODY ###}
     {#################}
+    {% if is_post() %}
     <div class="post-body{% if theme.han %} han-init-context{% endif %}{% if post.direction && post.direction.toLowerCase() === 'rtl' %} rtl{% endif %}" itemprop="articleBody">
 
       {# Gallery support #}
@@ -333,6 +342,7 @@
     {#####################}
     {### END POST BODY ###}
     {#####################}
+    {% endif %}
 
     {% if theme.wechat_subscriber.enabled and not is_index %}
       <div>
