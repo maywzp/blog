@@ -55,7 +55,7 @@ arr1.shift() // arr1: ['b']
 
 ```javascript
 var arr1 = ['a', 'b']
-arr1.push('c') // arr1: ['a', 'b', 'c']
+arr1.push('c', 'd') // arr1: ['a', 'b', 'c', 'd']
 ```
 
 #### *unshift（首部添加元素）

@@ -138,7 +138,7 @@ children.length // 3
 #### firstChild（第一个子节点）
 
 ```javascript
-var first = chontainer.firstChild
+var first = container.firstChild
 first.innerText // 'item'
 ```
 
@@ -257,6 +257,8 @@ container.style.fontSize = '20px' // 设置
 container.style.setProperty('font-size', '20px') // 使用 setProperty 设置
 
 container.style.removeProperty('font-size') // 移除某个样式
+
+container.style.cssText += ';left:20px;top:20px;'
 ```
 
 #### className（获取/设置节点样式类名）

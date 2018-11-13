@@ -305,4 +305,7 @@ var newstr = str.replace(re, "$2, $1")
 console.log(newstr)	// => 'Smith, John'
 ```
 
-
+##### 匹配 HTML 的 img 标签
+```javascript
+var matchImgs = html.match(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi)
+```
