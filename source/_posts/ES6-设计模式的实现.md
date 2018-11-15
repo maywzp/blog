@@ -28,10 +28,6 @@ const ob2 = new Singleton('two')
 ob1.data // 'one'
 ob2.data // 'one'
 
-ob1.flag = 'Object Flag'
-ob1.flag // 'Object Flag'
-ob2.flag // 'Object Flag'
-
 ob1 === ob2 // true
 ```
 

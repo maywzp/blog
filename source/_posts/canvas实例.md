@@ -4,7 +4,6 @@ date: 2016-12-9 11:37:49
 updated: 2016-12-9 11:37:49
 tags: ['canvas']
 description: HTML5 <canvas> 标签用于绘制图像
-photos: http://oizt3fjv8.bkt.clouddn.com/canvas_sl.jpg
 ---
 
 ## 矩形

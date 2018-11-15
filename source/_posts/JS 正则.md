@@ -10,7 +10,7 @@ description: Javascript 正则操作总结
 
 ```javascript
 var str = 'The Quick Brown Fox Jumps Over The Lazy Dog'
-var reg = /quick\s(brown).+?(jumps)/ig
+var reg = /quick\s(brown).+?(jumps)/gi
 ```
 
 #### 方法
@@ -28,7 +28,7 @@ reg.exec(str)	// => ['Quick Brown Fox Jumps', 'Brown', 'Jumps' ...]
 测试是否匹配，返回 true 或者 false
 
 ```javascript
-reg.test(str)	// => true
+reg.test(str) // => true
 ```
 
 ##### match
@@ -60,10 +60,8 @@ str.replace(reg, 'a') // => 'The a Over The Lazy Dog'
 分割字符串，返回 数组
 
 ```javascript
-str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
+str.split(reg) // =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 ```
-
-
 
 以下正则为全局匹配
 
@@ -126,8 +124,6 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 /.n/ 将会匹配 "nay, an apple is on the tree" 中的 'an' 和 'on'，但是不会匹配 'nay'
 ```
 
-
-
 #### 特殊字符
 
 ##### \b
@@ -188,15 +184,13 @@ str.split(reg)	// =>  ["The ", "Brown", "Jumps", " Over The Lazy Dog"]
 
 ##### \W
 
-匹配一个非单字符：字母、数字和下划线，等价于` [^A-Za-z0-9_]`
-
-
+匹配一个非单字符：字母、数字和下划线，等价于`[^A-Za-z0-9_]`
 
 #### 特殊运算符
 
 ##### {n}
 
-n是一个正整数，匹配了前面一个字符刚好发生了n次
+n 是一个正整数，匹配了前面一个字符刚好发生了 n 次
 
 ```javascript
 /a{2}/ 不会匹配“candy”中的'a',但是会匹配“caandy”中所有的a，以及“caaandy”中的前两个'a'。
@@ -204,7 +198,7 @@ n是一个正整数，匹配了前面一个字符刚好发生了n次
 
 ##### {n, m}
 
-n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n 或者 m 的值是0， 这个值被忽略
+n 和 m 都是整数。匹配前面的字符至少 n 次，最多 m 次。如果 n 或者 m 的值是 0， 这个值被忽略
 
 ```javascript
 /a{1,3}/ 并不匹配“cndy”中的任意字符，匹配“candy”中的a，匹配“caandy”中的前两个a，也匹配“caaaaaaandy”中的前三个a。注意，当匹配”caaaaaaandy“时，匹配的值是“aaa”，即使原始的字符串中有更多的a
@@ -212,7 +206,7 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 
 ##### (x)
 
-匹配 'x' 并且记住匹配项 (*捕获括号*)
+匹配 'x' 并且记住匹配项 (_捕获括号_)
 
 ```javascript
 模式/(foo) (bar) \1 \2/中的 '(foo)' 和 '(bar)' 匹配并记住字符串 "foo bar foo bar" 中前两个单词。模式中的 \1 和 \2 匹配字符串的后两个单词。注意 \1、\2、\n 是用在正则表达式的匹配环节。在正则表达式的替换环节，则要使用像 $1、$2、$n 这样的语法，例如，'bar foo'.replace( /(...) (...)/, '$2 $1' )
@@ -220,7 +214,7 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 
 ##### (?:x)
 
-匹配 'x' 但是不记住匹配项 (*非捕获括号*)
+匹配 'x' 但是不记住匹配项 (_非捕获括号_)
 
 ```javascript
  /(?:foo){1,2}/。如果表达式是 /foo{1,2}/，{1,2}将只对 ‘foo’ 的最后一个字符 ’o‘ 生效。如果使用非捕获括号，则{1,2}会匹配整个 ‘foo’ 单词
@@ -228,7 +222,7 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 
 ##### x(?=y)
 
-匹配 'x' 仅仅当 'x' 后面跟着 'y' (*正向肯定查找*)
+匹配 'x' 仅仅当 'x' 后面跟着 'y' (_正向肯定查找_)
 
 ```javascript
 /Jack(?=Sprat)/ 会匹配到 'Jack' 仅仅当它后面跟着 'Sprat'
@@ -237,7 +231,7 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 
 ##### x(?!y)
 
-匹配 'x' 仅仅当 'x' 后面不跟着 'y' (*正向否定查找*)
+匹配 'x' 仅仅当 'x' 后面不跟着 'y' (_正向否定查找_)
 
 ```javascript
 /\d+(?!\.)/匹配一个数字仅仅当这个数字后面没有跟小数点的时候。正则表达式/\d+(?!\.)/.exec("3.141")匹配‘141’但是不是‘3.141’
@@ -253,7 +247,7 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 
 ##### [x,y,z]
 
-一个字符集合。匹配方括号的中任意字符。可以使用破折号（-）来指定一个字符范围。对于点（.）和星号（*）这样的特殊符号在一个字符集中没有特殊的意义
+一个字符集合。匹配方括号的中任意字符。可以使用破折号（-）来指定一个字符范围。对于点（.）和星号（\*）这样的特殊符号在一个字符集中没有特殊的意义
 
 ```javascript
 [abcd] 和[a-d]是一样的。他们都匹配"brisket"中的‘b’,也都匹配“city”中的‘c’。/[a-z.]+/ 和/[\w.]+/都匹配“test.i.ng”中的所有字符
@@ -266,8 +260,6 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 ```javascript
 [^abc] 和 [^a-c] 是一样的。他们匹配"brisket"中的‘r’，也匹配“chop”中的‘h’
 ```
-
-
 
 #### 平衡组
 
@@ -285,27 +277,35 @@ n 和 m 都是整数。匹配前面的字符至少n次，最多m次。如果 n �
 
 ##### (?!)
 
- 零宽负向先行断言，由于没有后缀表达式，试图匹配总是失败
+零宽负向先行断言，由于没有后缀表达式，试图匹配总是失败
 
 ```javascript
 var reg = /<[^<>]*(((?'Open'<)[^<>]*)+((?'-Open'>)[^<>]*)+)*(?(Open)(?!))>/
 var regHtml = /<div[^>]*>[^<>]*(((?'Open'<div[^>]*>)[^<>]*)+((?'-Open'<\/div>)[^<>]*)+)*(?(Open)(?!))<\/div>./
 ```
 
-
-
 #### 运用
+
+##### 常用正则
+
+```bash
+email:  /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/
+mobile: /^1[0-9]{10}$/
+tel:    /^([0-9]{3,4}-)?[0-9]{7,8}$/
+phone:  /(^1[0-9]{10}$)|(^([0-9]{3,4}-)?[0-9]{7,8}$)/
+idcard: /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/
+```
 
 ##### 使用括号的子字符串匹配
 
 ```javascript
-var re = /(\w+)\s(\w+)/
-var str = "John Smith"
-var newstr = str.replace(re, "$2, $1")
-console.log(newstr)	// => 'Smith, John'
+var str = 'John Smith'
+var newstr = /(\w+)\s(\w+)/.replace(re, '$2, $1')
+console.log(newstr) // => 'Smith, John'
 ```
 
 ##### 匹配 HTML 的 img 标签
+
 ```javascript
 var matchImgs = html.match(/<img [^>]*src=['"]([^'"]+)[^>]*>/gi)
 ```

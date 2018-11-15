@@ -1,5 +1,5 @@
 ---
-title: JS 数组
+title: JS Array
 date: 2016-11-24 16:38:42
 updated: 2018-10-12 12:20:00
 tags: ['javascript操作手册']

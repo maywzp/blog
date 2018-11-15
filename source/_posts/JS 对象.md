@@ -1,5 +1,5 @@
 ---
-title: JS 对象
+title: JS Object
 date: 2016-12-22 11:44:18
 updated: 2018-10-12 11:56:00
 tags: ['javascript操作手册']

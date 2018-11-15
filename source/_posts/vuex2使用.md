@@ -17,7 +17,7 @@ Actions（异步操作，触发mutation）
 Getters（数据格式处理，返回所需数据）
 ```
 
-# 引入vuex
+# 引入 vuex
 
 ```javascript
 import Vue from 'vue'
@@ -27,23 +27,24 @@ import * as actions from './actions'
 Vue.use(Vuex)
 ```
 
-# 使用vuex
-Computed计算属性里引入getters中的数据 Methods中引入actions中的方法
+# 使用 vuex
+
+Computed 计算属性里引入 getters 中的数据 Methods 中引入 actions 中的方法
 
 ```javascript
 import { mapGetters, mapActions } from 'vuex'
 mounted(){
-   this.fetchBooks()
-   let books = this.books
+  this.fetchBooks()
+  let books = this.books
 },
 computed: {
-    ...mapGetters([
-        'books',
-    ])
+  ...mapGetters([
+    'books',
+  ])
 },
  methods: {
-    ...mapActions([
-      'fetchBooks',
-    ]),
+  ...mapActions([
+    'fetchBooks',
+  ]),
 }
 ```

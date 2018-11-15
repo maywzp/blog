@@ -7,12 +7,14 @@ tags: '知识点'
 
 继承是指一个对象直接使用另一对象的属性和方法。
 
-Javascript 在`ES6`之前并没有像其他面向对象编程语言（如：C++、Java）有“类”(class)的概念，虽然设计了构造函数，但只能创建对象的副本，无法共享属性和方法。所以在`ES6`之前，js对象的继承主要还是通过`prototype`属性实现。
+Javascript 在`ES6`之前并没有像其他面向对象编程语言（如：C++、Java）有“类”(class)的概念，虽然设计了构造函数，但只能创建对象的副本，无法共享属性和方法。所以在`ES6`之前，js 对象的继承主要还是通过`prototype`属性实现。
 
 下面展示几种原始的继承方法：
 
 ## 构造函数的继承
+
 要使用到的构造函数
+
 ```javascript
 function Animal() {
   this.species = '动物'
@@ -36,7 +38,7 @@ function Cat(name, color) {
 }
 
 var cat1 = new Cat('大毛', '黄色')
-cat1.species	// 动物
+cat1.species // 动物
 ```
 
 ### prototype 模式
@@ -47,7 +49,7 @@ cat1.species	// 动物
 Cat.prototype = new Animal()
 Cat.prototype.constructor = Cat
 var cat1 = new Cat('大毛', '黄色')
-cat1.species	// 动物
+cat1.species // 动物
 ```
 
 **注意：改变了对象的 prototype ，需要手动将 新 prototype 对象的 constructor 属性指向原来的构造函数。**
@@ -63,16 +65,16 @@ o.prototype.constructor = o
 
 缺点：Cat.prototype 和 Animal.prototype 现在指向了同一个对象
 
-​	    Animal.prototype.constructor === Cat
+​ Animal.prototype.constructor === Cat
 
 ```javascript
-function Animal(){ }
+function Animal() {}
 Animal.prototype.species = '动物'
 
-Cat.prototype = Animal.prototype;
-Cat.prototype.constructor = Cat;
+Cat.prototype = Animal.prototype
+Cat.prototype.constructor = Cat
 var cat1 = new Cat('大毛', '黄色')
-cat1.species	// 动物
+cat1.species // 动物
 ```
 
 ### 利用空对象作为中介
@@ -116,16 +118,6 @@ function extend2(Child, Parent) {
 
 ## 非构造函数继承
 
-```javascript
-var Chinese = {
-  nation:'中国'
-}
-
-var Doctor ={
-  career:'医生'
-}
-```
-
 ### object() 方法
 
 ```javascript
@@ -134,8 +126,6 @@ function object(o) {
   F.prototype = o
   return new F()
 }
-
-var Doctor = object(Chinese)
 ```
 
 ### 浅拷贝
@@ -156,9 +146,9 @@ function extendCopy(p) {
 ```javascript
 function deepCopy(p, c) {
   var c = c || {}
-  for(var i in p) {
+  for (var i in p) {
     if (typeof p[i] === 'object') {
-      c[i] = (p[i].constructor === Array) ? [] : {}
+      c[i] = p[i].constructor === Array ? [] : {}
       deepCopy(p[i], c[i])
     } else {
       c[i] = p[i]
@@ -169,7 +159,9 @@ function deepCopy(p, c) {
 ```
 
 ## ES6 Class
-类的所有方法实际上都定义在类的prototype属性上面。
+
+类的所有方法实际上都定义在类的 prototype 属性上面。
+
 ```javascript
 class Animal {
   constructor() {
@@ -188,6 +180,6 @@ class Cat extends Animal {
   }
 }
 
-var cat1 = new Cat('大毛','黄色')
-cat1.species	// 动物
+var cat1 = new Cat('大毛', '黄色')
+cat1.species // 动物
 ```

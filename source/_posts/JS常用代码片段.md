@@ -2,29 +2,33 @@
 title: JS常用代码片段
 date: 2016-12-16T16:44:28.000Z
 updated: 2018-11-12 15:04:14
-tags:
-  - javascript
-description: Javascript 片段积累
-photos: 'http://oizt3fjv8.bkt.clouddn.com/javascriptno2.jpg'
+tags: ['代码片段']
 ---
 
-### 保留两位小数
+## ES6
+
+### 对象浅拷贝
 
 ```javascript
-number.toFixed(2)
+var obj = { name: 'may' }
+var cloneObj = JSON.parse(JSON.stringify(obj))
+var cloneObj = Object.assign({}, obj)
+var cloneObj = { ...obj }
 ```
 
-### 解决数组引用问题
+### 对象深拷贝
 
 ```javascript
-arr.concat() //数组复制
+function deepCopy(obj) {
+  let temp = obj.constructor === Array ? [] : {}
+  for (let val in obj) {
+    temp[val] = typeof obj[val] == 'object' ? deepCopy(obj[val]) : obj[val]
+  }
+  return temp
+}
 ```
 
-### 解决对象引用问题
-
-```javascript
-Object.assign({}, obj) //对象复制
-```
+## Jquery
 
 ### 获取下拉框文字
 
@@ -39,6 +43,107 @@ $('#FinanceCostType')
 ```javascript
 $("select[name='select1']").get(0).selectedIndex
 ```
+
+### 自动触发事件
+
+```javascript
+$('#loadBtn').trigger('click')
+```
+
+### 复选框全选
+
+```javascript
+$('#checkAll').click(function() {
+  $('input[name="subBox"]').attr('checked', this.checked)
+})
+var $subBox = $("input[name='subBox']")
+$subBox.click(function() {
+  $('#checkAll').attr(
+    'checked',
+    $subBox.length == $("input[name='subBox']:checked").length ? true : false
+  )
+})
+```
+
+### 重置表单
+
+```javascript
+reset: function () {
+    $("#StartTime").val($("#hidStartTime").val());
+    $("#EndTime").val($("#hidEndTime").val());
+    $("#BankName option[value='']").attr("selected", true);
+    $("#formTable input[type='text']").val("");
+    $("#formTable select").each(function () {
+        $(this).find("option:first").attr("selected", "selected");
+    });
+},
+```
+
+### 表单提交
+
+```javascript
+var frm = $('form')
+frm.submit(function(e) {
+  $.ajax({
+    type: frm.attr('method'),
+    url: frm.attr('action'),
+    data: frm.serialize(),
+    success: function(data) {
+      alert('ok')
+    },
+    error: function(err) {
+      alert(err)
+    }
+  })
+  e.preventDefault()
+})
+```
+
+### 获取表单数据
+
+```javascript
+serializeJson: function(obj) {
+  var jsonObj = {};
+
+  $.each(obj, function() {
+    var value = $.trim($(this).val());
+
+    if (value !== '') {
+      var key = $(this).attr('name');
+      key && (jsonObj[key] = value);
+    }
+  });
+  return jsonObj;
+}
+var JsonObj = $.serializeJson($("#tableCondition").find("select,input[type='text']"));
+```
+
+### 返回顶部
+
+```javascript
+// fade in .back-to-top
+$(window).scroll(function() {
+  if ($(this).scrollTop() > 500) {
+    $('.back-to-top').fadeIn()
+  } else {
+    $('.back-to-top').fadeOut()
+  }
+})
+
+// scroll body to 0px on click
+$('.back-to-top').click(function() {
+  $('html, body').animate(
+    {
+      scrollTop: 0,
+      easing: 'swing'
+    },
+    750
+  )
+  return false
+})
+```
+
+## 原生 JS
 
 ### 阻止默认事件
 
@@ -76,19 +181,11 @@ js:   loginName = decodeURI(decodeURI(loginName));
 Java：loginName = java.net.URLDecoder.decode(loginName,"UTF-8");
 ```
 
-### JSON 操作
+### JSON 序列化
 
 ```javascript
 eval('(' + data + ')')
-$.param(data)
-JSON.parse(str)
 JSON.stringify(obj)
-```
-
-### 自动触发事件
-
-```javascript
-$('#loadBtn').trigger('click')
 ```
 
 ### 金钱格式化（加千分号，保留两位小数）
@@ -127,90 +224,28 @@ window.location.reload()
 self.location = document.referrer
 ```
 
-### 复选框全选
-
-```javascript
-$('#checkAll').click(function() {
-  $('input[name="subBox"]').attr('checked', this.checked)
-})
-var $subBox = $("input[name='subBox']")
-$subBox.click(function() {
-  $('#checkAll').attr(
-    'checked',
-    $subBox.length == $("input[name='subBox']:checked").length ? true : false
-  )
-})
-```
-
-### form 表单
-
-### 表头
+### form 表头
 
 ```javascript
 headers : {'Content-Type': 'application/json;charset=utf-8'},
 ```
 
-### 重置表单
-
-```javascript
-reset: function () {
-    $("#StartTime").val($("#hidStartTime").val());
-    $("#EndTime").val($("#hidEndTime").val());
-    $("#BankName option[value='']").attr("selected", true);
-    $("#formTable input[type='text']").val("");
-    $("#formTable select").each(function () {
-        $(this).find("option:first").attr("selected", "selected");
-    });
-},
-```
-
 ### 图片上传
 
 ```html
-<form enctype="multipart/form-data" action="http://192.168.1.155:8080/regulator/common/upload/image" method="post">
-    <input type="file" name="file"/>
-    <input type="submit"  value="上传" >
+<form
+  enctype="multipart/form-data"
+  action="http://192.168.1.155:8080/regulator/common/upload/image"
+  method="post"
+>
+  <input type="file" name="file" /> <input type="submit" value="上传" />
 </form>
-<input id="filePicker" type="file" accept="image/*;capture=camera" class="input">
-```
-
-### 表单提交
-
-```javascript
-var frm = $('form')
-frm.submit(function(e) {
-  $.ajax({
-    type: frm.attr('method'),
-    url: frm.attr('action'),
-    data: frm.serialize(),
-    success: function(data) {
-      alert('ok')
-    },
-    error: function(err) {
-      alert(err)
-    }
-  })
-  e.preventDefault()
-})
-```
-
-### 反序列化
-
-```javascript
-serializeJson: function(obj) {
-    var jsonObj = {};
-
-    $.each(obj, function() {
-        var value = $.trim($(this).val());
-
-        if (value !== '') {
-            var key = $(this).attr('name');
-            key && (jsonObj[key] = value);
-        }
-    });
-    return jsonObj;
-}
-var JsonObj = $.serializeJson($("#tableCondition").find("select,input[type='text']"));
+<input
+  id="filePicker"
+  type="file"
+  accept="image/*;capture=camera"
+  class="input"
+/>
 ```
 
 ### 获取 URL 中传递的参数
@@ -291,31 +326,6 @@ function removeCookie(name) {
   expires.setTime(expires.getTime() - 1000 * 60)
   setCookie(name, '', expires)
 }
-```
-
-### 返回顶部
-
-```javascript
-// fade in .back-to-top
-$(window).scroll(function() {
-  if ($(this).scrollTop() > 500) {
-    $('.back-to-top').fadeIn()
-  } else {
-    $('.back-to-top').fadeOut()
-  }
-})
-
-// scroll body to 0px on click
-$('.back-to-top').click(function() {
-  $('html, body').animate(
-    {
-      scrollTop: 0,
-      easing: 'swing'
-    },
-    750
-  )
-  return false
-})
 ```
 
 ### 判断是否为 pc 浏览器
@@ -404,11 +414,10 @@ function getMousePos(event) {
   var scrollY = document.documentElement.scrollTop || document.body.scrollTop
   var x = e.pageX || e.clientX + scrollX
   var y = e.pageY || e.clientY + scrollY
+  console.log(x, y)
   return { x: x, y: y }
 }
-onmousemove = 'getMousePos(event)'
-getMousePos(e).x
-getMousePos(e).y
+document.onmousemove = getMousePos
 ```
 
 ### localStorage
@@ -482,14 +491,6 @@ const MillisecondToDate = function(msd) {
     }
   }
   return str
-}
-```
-
-### 克隆
-
-```javascript
-function clone(data) {
-  return JSON.parse(JSON.stringify(data))
 }
 ```
 

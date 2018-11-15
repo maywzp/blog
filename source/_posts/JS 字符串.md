@@ -1,5 +1,5 @@
 ---
-title: JS 字符串
+title: JS String
 date: 2016-11-29 10:47:28
 updated: 2018-10-12 17:35:00
 tags: ['javascript操作手册']

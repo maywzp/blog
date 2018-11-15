@@ -8,20 +8,21 @@ description: 'Vue.js是当下很火的一个JavaScript MVVM库,它是以数据�
 photos: 'http://oizt3fjv8.bkt.clouddn.com/vue_no2.jpg'
 ---
 
-# 绑定class
-## 单个class
+# 绑定 class
+
+## 单个 class
 
 ```javascript
 <div :class="{active: isActive}"></div>
 ```
 
-## 多个class
+## 多个 class
 
 ```javascript
 <div :class="{active: isActive, 'text-danger': hasError}"></div>
 ```
 
-## 绑定一个class对象
+## 绑定一个 class 对象
 
 ```javascript
 <div :class="classObj"></div>
@@ -51,14 +52,15 @@ computed: {
 }
 ```
 
-# 绑定style
+# 绑定 style
+
 ## 直接绑定
 
 ```javascript
 <div :style="{color: '#ccc', fontSize: baseSize + 'px'}"></div>
 ```
 
-## 绑定一个style对象
+## 绑定一个 style 对象
 
 ```javascript
 <div :style="styleObj"></dvi>
@@ -70,9 +72,9 @@ data: {
 }
 ```
 
-**注：通过vue绑定的style会自动添加响应的前缀**
+**注：通过 vue 绑定的 style 会自动添加响应的前缀**
 
-# tab标签切换
+# tab 标签切换
 
 ```javascript
 v-for="(item, index) of items"
@@ -86,7 +88,7 @@ v-show="iscur == index? true: false"
 <div v-on="click: onClick, keyup: onKeyup, keydown: onKeydown"></div>
 ```
 
-# v-if切换多个元素
+# v-if 切换多个元素
 
 ```html
 <template v-if="ok">
@@ -96,13 +98,12 @@ v-show="iscur == index? true: false"
 </template>
 ```
 
-# v-for迭代
+# v-for 迭代
+
 ## 数组
 
 ```html
-<li v-for="(item, index) in items">
-    {{ index }} - {{ item.message }}
-</li>
+<li v-for="(item, index) in items">{{ index }} - {{ item.message }}</li>
 ```
 
 ## 对象
@@ -127,21 +128,28 @@ v-show="iscur == index? true: false"
 # 排序
 
 ```html
-<li v-for="user in users | orderBy 'name'"> //按名字排序用户
-<li v-for="user in users | orderBy 'name' -1"> //降序
-<li v-for="user in users | orderBy 'lastName' 'firstName'"> //使用两个键名排序
-<button @click="order = order * -1">Reverse Sort Order</button>
-<li v-for="user in users | orderBy 'name' order">//动态排序
+<li v-for="user in users | orderBy 'name'">//按名字排序用户</li>
+<li v-for="user in users | orderBy 'name' -1">//降序</li>
+<li v-for="user in users | orderBy 'lastName' 'firstName'">
+  //使用两个键名排序
+  <button @click="order = order * -1">Reverse Sort Order</button>
+</li>
+
+<li v-for="user in users | orderBy 'name' order">//动态排序</li>
 ```
 
 # filter(过滤器)
 
 ```javascript
-{{ msg | capitalize }} //过滤器函数第一个参数为表达式
+{
+  {
+    msg | capitalize
+  }
+} //过滤器函数第一个参数为表达式
 
 new Vue({
   filters: {
-    capitalize: function (value) {
+    capitalize: function(value) {
       if (!value) return ''
       value = value.toString()
       return value.charAt(0).toUpperCase() + value.slice(1)
@@ -159,7 +167,7 @@ new Vue({
 .self     （元素本身触发）
 ```
 
-# v-model修饰符
+# v-model 修饰符
 
 ```javascript
 v-model.lazy   （数值改变才执行，change事件中同步）
